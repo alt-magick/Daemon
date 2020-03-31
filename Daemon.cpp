@@ -11,9 +11,9 @@
 
 using namespace std;
 
-int main()
-{
+int main() {
 
+string file;
 _setmode(_fileno(stdout), _O_U16TEXT);
 wcout << L"   	                                                       " << endl;
 wcout << L"   ▓█████▄  ▄▄▄      ▓█████  ███▄ ▄███▓ ▒█████   ███▄    █ " << endl;
@@ -30,10 +30,11 @@ wcout << L"    ░  Calculating 666                                     " << end
 wcout << L"                                                           " << endl;
 wcout << L"                                              (Esc to quit)" << endl;
 wcout << endl;
-
-string file;
+ 
+char Wait = _getch();
 wcout << L"Enter file to write to: ";
 cin >> file;
+if (Wait == 27) return 0;
 fflush(stdin);
 
 	srand((unsigned)time(0));
@@ -49,7 +50,7 @@ fflush(stdin);
 			TheBeast << Daemon << " ::: " << asctime(localtime(&curr_time)) << endl;
 			if (_kbhit())
 			{
-				char Wait = _getch();
+				Wait = _getch();
 				system("pause");
 				if (Wait == 27) break; // Escape key exits
 				fflush(stdin);
