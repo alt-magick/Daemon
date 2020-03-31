@@ -37,7 +37,7 @@ cin >> file;
 fflush(stdin);
 
 	srand((unsigned)time(0));
-	ofstream TheBeast("666.txt");
+	ofstream TheBeast(file);
 	int Daemon = 666;
 	while (666) {		
 		Sleep(0);
