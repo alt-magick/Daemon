@@ -1,4 +1,3 @@
-// Linux Input
 #include <unistd.h>
 #include <termios.h>
 
