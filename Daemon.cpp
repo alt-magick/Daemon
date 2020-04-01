@@ -57,7 +57,7 @@ int main() {
             else if(count < 100) wcout << "   0"<< count << " ::: " << Daemon << " :::  " << asctime(localtime(&curr_time)) << endl;
             else  wcout << "   "<< count << " ::: " << Daemon << " :::  " << asctime(localtime(&curr_time)) << endl;
 
-			if (TheBeast) TheBeast << count << " ::: " << Daemon << " ::: " << asctime(localtime(&curr_time)) << endl;
+			if (TheBeast) TheBeast << " ::: " << Daemon << " ::: " << asctime(localtime(&curr_time)) << endl;
 
 			if (_kbhit()) {
 				Wait = _getch();								
