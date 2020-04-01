@@ -6,6 +6,7 @@
 #include <fcntl.h>
 #include <string>
 #include "kbhit.h"
+#include "getch.h"
 
 using namespace std;
 
@@ -28,7 +29,7 @@ int main() {
 	cout << "                                              (Esc to quit)" << endl;
 	cout << endl;
 
-	char Wait = getchar();
+	char Wait = getch();
 	if (Wait == 27) return 0;
 	cout << "(Leave blank for none)"<<endl;
 	cout << "Enter file to write to: ";
@@ -54,10 +55,10 @@ int main() {
             if (TheBeast) TheBeast << count << " ::: " << Daemon << " ::: " << asctime(localtime(&curr_time)) << endl;
 
 			if (kbhit()) {
-				Wait = getchar();								
+				Wait = getch();								
 				if (Wait == 27) return 0; // Escape key exits.
 				    cout << "   Continue... (Esc to quit.)" << endl;
-                    Wait = getchar();
+                    Wait = getch();
                     if (Wait == 27) return 0;
 			}
 		}
